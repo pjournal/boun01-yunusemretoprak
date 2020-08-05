@@ -1,0 +1,13 @@
+---
+title: ''
+output:
+  html_document: default
+  word_document: default
+---
+# FIRST ASSIGNMENT: RMARKDOWN
+*YUNUS EMRE TOPRAK*
+
+*05.08.2020*
+
+I am Yunus Emre Toprak. I have a B.S in Industrial Engineering from Bogazici University.
+You can visit my linkedin profile [here](https://www.linkedin.com/in/yunus-emre-toprak-655372175/)
