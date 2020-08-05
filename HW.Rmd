@@ -1,0 +1,29 @@
+---
+title: "RMarkdown Homework"
+author: "Yunus Emre Toprak"
+date: "05 08 2020"
+output:
+  html_document: default
+  word_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+I am Yunus Emre Toprak. I have a B.S in Industrial Engineering from Bogazici University.
+You can visit my linkedin profile [here](https://www.linkedin.com/in/yunus-emre-toprak-655372175/)
+
+# useR! 2020: Privacy protected maps using adaptive kernel density estimation
+The lecturer, Edwin de Jong mentions about the sdcSapital. It is a package to create density maps that protecet privacy of individual observations.There is several methods for creating raster maps, population density, value density and mean density. It includes some methods for protecting data. This year they added is adaptive smoothing with protect_adaptive. And also he mentions about how to reduce sensitivity and why adaptive smoothing.
+
+[Privacy protected maps using adaptive kernel density estimation ](https://www.youtube.com/watch?v=M10SmUs68x4)
+
+# Extending flexmix to model-based clustering with sparse data
+Package flexmix implements model based clustering using finite mixtures, estimated with the EM algorithm.Provides an extensible framework, which takes care of all data handling and provides the E-step. Clustering of sparse data becomes more of interest due to the availability of high dimensional data.Miss-Fisher distribution is a model class which has been proposed for model-based clustering of spherical data. Extending pakcage is mowMF by providing a flexmix model driver.
+
+[Extending flexmix to model-based clustering with sparse data](https://www.youtube.com/watch?v=pwzCoHl8QMQ)
+
+# missMethods: Creating/Handling Missing Data & Evaluating Methods
+missMethods is an R package for creating and handling missing data as well as evaluating missing data methods. Tobias Rockel is the creator of these methods. 3 main steps in the process of evaluating missing data methods. Create and handling missing data and evaluate the handling routine. Most of the delete functions are based on the paper by santos et al from 2019. First aim of the package is to provide easy to use functions. The second is increase reproducibility of missing data simulations. The third one is simplify design of missing data simulations.
+
+[missMethods](https://www.youtube.com/watch?v=G6JCXaPjG9g)
