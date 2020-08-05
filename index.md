@@ -1,3 +1,3 @@
 # ASSIGNMENT 1
 
-[RMARKDOWN](https://github.com/pjournal/boun01-yunusemretoprak/blob/gh-pages/yun.html) 
+[RMARKDOWN](https://pjournal.github.io/boun01-yunusemretoprak/yun.html) 
