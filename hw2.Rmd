@@ -1,0 +1,50 @@
+---
+title: "Electricity Market"
+author: "Yunus Emre Toprak"
+output: html_document
+date: "24.08.2020"
+---
+# Packages
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r library, echo = FALSE}
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(lubridate)
+```
+
+# Introduction  
+
+In this analysis, we are going to analyze the data of the electricity prices from 01 - 31.07.2020. You can check information from [here](https://boun-ie48a.github.io/files/electricity_markets_mini_tutorial)
+
+# Data read
+
+After downloading the data, we will import the data to an object called `data`. After importing the data we can observe the data with glimpse function.
+
+```{r data}
+data = read.csv("C:/Users/Yunus Emre TOPRAK/Desktop/ptf-smf1.csv")
+data %>% glimpse()
+```
+
+# Adjustment
+
+The type of the date field is string, we need to change the type of that column. 
+
+```{r preprocessing}
+data$PTF = as.numeric(gsub(",", ".", gsub("\\.", "", data$PTF)))
+data$SMF = as.numeric(gsub(",", ".", gsub("\\.", "", data$SMF)))
+data$Negatif.Dengesizlik.Fiyatı..TL.MWh. = as.numeric(gsub(",", ".", gsub("\\.", "", data$Negatif.Dengesizlik.Fiyatı..TL.MWh.)))
+data$Pozitif.Dengesizlik.Fiyatı..TL.MWh. = as.numeric(gsub(",", ".", gsub("\\.", "", data$Pozitif.Dengesizlik.Fiyatı..TL.MWh.)))
+data$Tarih = gsub(pattern = "\\.","-",data$Tarih)
+data_last = data %>%
+  select(Date = Tarih, MCP = PTF, SMP = SMF, NIP = Negatif.Dengesizlik.Fiyatı..TL.MWh., PIP = Pozitif.Dengesizlik.Fiyatı..TL.MWh., SMPDirection = SMF.Yön) %>%
+  mutate(DateTime = as.POSIXct(factor(Date), format = "%d-%m-%y %H:%M")) %>%
+  mutate(Day = wday(DateTime, week_start = 1), Hour = hour(DateTime), Date = as.Date(Date, format = "%d-%m-%y %H:%M"))
+data_last %>% glimpse()
+```
+
+
